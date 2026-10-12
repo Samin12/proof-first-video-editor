@@ -1,0 +1,4 @@
+# Python deps of scripts/audio (ffmpeg/ffprobe >= 6 must be on PATH separately).
+#   python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
+numpy>=1.24
+scipy>=1.10  # optional but recommended: envelope lag (info) and coherence in the null test

@@ -1,0 +1,86 @@
+{
+  "_notes": [
+    "Example args for workflows/design-visuals.js. Keys starting with _ are ignored by the workflow. All values are placeholders.",
+    "Slots (start/end) are PROJECT ms on the FINAL timeline (after every cut and chapter card): run a job per stretch between cards,",
+    "split at sentence boundaries into 30 to 120 s jobs, one scene per job (job.mjs refuses a range that crosses a scene boundary).",
+    "mode behind = talking to camera, the render is the visual; mode front = transparent callouts over the creator's real footage.",
+    "Omit `job` and set prepare:true to have the workflow create the jobs (sequentially, ceil-sized, drift phase registered).",
+    "frames defaults to ceil((end - start) * 30 / 1000). The REA video used 13 jobs: 10 behind, 3 front.",
+    "kit_dir must be $BORUMI_AGENT_HOME/animation-kit (job.mjs only reads BORUMI_AGENT_HOME); style velour = templates/velour-style, installed and checked in SKILL step 0."
+  ],
+  "title": "Tally",
+  "creator": "Alex",
+  "topic": "A tutorial about Tally, a fictional open-source CLI that audits a codebase.",
+  "direction": "\"When I'm talking through something, I want a visual aid as proof.\" \"Most of the video needs visualizations.\"",
+  "project_id": "<borumi-project-id>",
+  "project_path": "/path/to/Tally.bmprojbundle",
+  "proof_dir": "/path/to/Tally Agent/proof",
+  "designer_brief": "/path/to/Tally Agent/receipts/designer-brief.md",
+  "kit_dir": "~/.borumi-agent/animation-kit",
+  "plugin_dir": "~/.borumi-agent/plugin",
+  "style": "velour",
+  "public_subdir": "tally",
+  "words": {
+    "<scene-a>": "/path/to/work/words/scene-a.json",
+    "<scene-b>": "/path/to/work/words/scene-b.json"
+  },
+  "sentences": {
+    "<scene-a>": "/path/to/work/words/scene-a_sentences.json"
+  },
+  "reference_jobs": [
+    "anim-xxxxxxxx: real screenshots in browser cards with a URL bar, highlight rings on the spoken number, source pills, calm crossfades",
+    "anim-yyyyyyyy: a clean step-by-step board for a concept"
+  ],
+  "broll": [
+    { "src": "tally/clone_reveal_v1.mp4", "desc": "8.6 s real screen recording, original app -> the rebuilt one; light-mode UI, so dim or frame it; 16:9, show at its own aspect" },
+    { "src": "tally/device_v2.mp4", "desc": "8.9 s handheld device footage; v2 has the on-screen list blurred (never use v1)" }
+  ],
+  "honesty_notes": [
+    "The license covers Tally itself; its disclaimer puts authorization on the user, so never print 'resell'.",
+    "The $15 price is a launch price ($39 regular), and there is no free trial (a 14-day refund instead)."
+  ],
+  "privacy_rules": [
+    "Never show the price or join page of the creator's community; the ending shows a real community post instead."
+  ],
+  "prepare": true,
+  "max_rounds": 2,
+  "check_effort": "medium",
+  "continuity": true,
+  "tasks": [
+    {
+      "key": "H1",
+      "scene": "<scene-a>",
+      "start": 104963,
+      "end": 183420,
+      "mode": "behind",
+      "brief": "HOW IT WORKS, part 1 (1:45.0 to 3:03.4). See templates/section-brief.example.md, example 1."
+    },
+    {
+      "key": "H2",
+      "scene": "<scene-a>",
+      "start": 183420,
+      "end": 283930,
+      "mode": "behind",
+      "depends_on": "H1",
+      "brief": "HOW IT WORKS, part 2 (3:03.4 to 4:43.9). Reuses part 1's recipe/cake cards exactly."
+    },
+    {
+      "key": "S1",
+      "scene": "<scene-b>",
+      "start": 372000,
+      "end": 543930,
+      "mode": "front",
+      "brief": "SET IT UP, front overlay over the screen recording. See templates/section-brief.example.md, example 2."
+    },
+    {
+      "key": "W1r",
+      "job": "anim-zzzzzzzz",
+      "scene": "<scene-b>",
+      "start": 600000,
+      "end": 672167,
+      "mode": "behind",
+      "revision": { "of_version": 1 },
+      "brief": "REVISION of v1 (keep all timing). See templates/section-brief.example.md, example 3."
+    }
+  ]
+}

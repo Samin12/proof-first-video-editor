@@ -1,0 +1,8 @@
+{
+  "_comment": "place_render.py input. BEHIND = opaque 1920x1080 30 fps renders that draw their own panel + canvas, placed under the camera tile on talking-head stretches. start / end = CURRENT project ms (integers), one scene per slot, no overlaps. The times are the ones used for the first production run, as an example.",
+  "mode": "behind",
+  "slots": [
+    {"name": "I2", "render": "~/Borumi Projects/My Video Agent/animations/anim-xxxx/anim-xxxx-v1.mp4", "start": 57800, "end": 104963},
+    {"name": "C1", "render": "~/Borumi Projects/My Video Agent/animations/anim-yyyy/anim-yyyy-v1.mp4", "start": 106564, "end": 183420}
+  ]
+}

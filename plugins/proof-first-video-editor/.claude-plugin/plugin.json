@@ -1,0 +1,13 @@
+{
+  "name": "proof-first-video-editor",
+  "version": "1.0.0",
+  "description": "Turn a raw Borumi talking-head + screen recording into a finished proof-first YouTube video: tight cut, chapter cards and a step badge, a real proof visual for every claim in the left panel next to the camera tile on a drifting dot-grid canvas, Auphonic-mastered audio rebuilt at timeline positions, fixed captions, YouTube chapters, layered QA, and an optional shorter v-next cut made straight from the finished master.",
+  "author": {
+    "name": "Samin Yasar",
+    "url": "https://github.com/Samin12"
+  },
+  "homepage": "https://github.com/Samin12/proof-first-video-editor",
+  "repository": "https://github.com/Samin12/proof-first-video-editor",
+  "license": "MIT",
+  "keywords": ["borumi", "video-editing", "youtube", "proof-first", "motion-graphics", "auphonic", "chapters", "captions", "claude-code", "skill"]
+}

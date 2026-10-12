@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Samin12/proof-first-video-editor/templates/proof-index.schema.json",
+  "title": "Proof pack index (proof-index.json)",
+  "description": "The machine-readable index of a proof pack, written by the assembler/verifier of workflows/research-proof.js. One entry per claim, in NARRATION ORDER. Designers build the on-screen proof visuals from this file, so every best_visual must be a file someone opened and confirmed. Paths are relative to the proof pack root. Mirrors the README.md tables (templates/proof-pack-README.md).",
+  "type": "object",
+  "required": ["title", "verified_by", "verified_at", "order_basis", "legend", "entries"],
+  "properties": {
+    "title": { "type": "string", "examples": ["My video proof pack: verifier index"] },
+    "verified_by": { "type": "string", "examples": ["independent verifier agent"] },
+    "verified_at": { "type": "string", "description": "When the live re-checks ran (ISO time or range).", "examples": ["2026-01-31T18:10Z to 18:30Z"] },
+    "order_basis": { "type": "string", "description": "What the order and the approximate times are based on (transcript, word files). Times shift with every cut: say so." },
+    "legend": {
+      "type": "object",
+      "description": "Status symbols used in entries[].status.",
+      "additionalProperties": { "type": "string" },
+      "examples": [{ "✓": "matches", "✗": "wrong as said", "~": "partly right; use the honest line", "–": "context only, nothing to compare" }]
+    },
+    "accent": { "type": "string", "description": "How the highlight versions were drawn.", "examples": ["#E2774E 6 px (ffmpeg drawbox)"] },
+    "entries": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/entry" }
+    }
+  },
+  "$defs": {
+    "entry": {
+      "type": "object",
+      "required": ["order", "kind", "id", "folder", "narration_quote", "status", "verified_value", "best_visual", "source_url", "captured_at"],
+      "properties": {
+        "order": { "type": "integer", "minimum": 1, "description": "Position in narration order (1-based)." },
+        "kind": {
+          "type": "string",
+          "enum": ["narration", "context", "supporting"],
+          "description": "narration = the creator says it; context = not said, but a designer may need it (e.g. a release date); supporting = extra evidence for another entry (e.g. a license file behind a README claim)."
+        },
+        "id": { "type": "string", "description": "Stable id, same as the item id in <folder>/sources.json.", "examples": ["repo-01-identity"] },
+        "folder": { "type": "string", "examples": ["01-the-repo"] },
+        "narration_time_approx": { "type": ["string", "null"], "description": "Approximate time(s) on the current timeline, e.g. \"4:10\" or \"0:17 and 22:01\"; \"(context)\" for context entries." },
+        "narration_quote": { "type": "string", "description": "What the creator says (short quote). For context entries: \"(not narrated) <what it is>\"." },
+        "status": { "type": "string", "enum": ["✓", "✗", "~", "–", "✓ (rounded)", "✓ (temporary)"], "description": "Verdict after the independent re-check. Rounded/temporary variants mean: fine as said, but show the exact source value on screen." },
+        "verified_value": { "type": "string", "description": "What the source shows NOW, quoted where possible, with exact figures and the capture time for anything that moves." },
+        "best_visual": { "type": "string", "description": "The ONE file to put on screen for this claim (relative path). Prefer a *-highlight.png or *-crop.png that fits a 16:9-ish panel; never a very tall capture." },
+        "other_visuals": { "type": "array", "items": { "type": "string" }, "default": [] },
+        "source_url": { "type": "string" },
+        "captured_at": { "type": "string", "description": "ISO time of the capture." },
+        "honest_line": { "type": ["string", "null"], "description": "For ✗ and ~: a corrected line in the creator's voice that the source supports. null when the claim matches." },
+        "suggested_line": { "type": ["string", "null"], "description": "An on-screen or spoken wording that is safe to use (may be set for ✓ entries too, e.g. rounding a live counter)." },
+        "verifier_recheck": { "type": ["string", "null"], "description": "What the independent verifier re-checked live, how, and when." },
+        "verifier_notes": { "type": ["string", "null"] },
+        "do_not_show": {
+          "type": "array",
+          "items": { "type": "string" },
+          "default": [],
+          "description": "Things visible in the capture that must never reach the screen (third-party names, prices of the creator's own paid community, emails, account details). Designers crop or blur them."
+        },
+        "risk": {
+          "type": ["string", "null"],
+          "enum": ["legal", "privacy", "accuracy", null],
+          "description": "Set when the entry must be raised with the creator (e.g. a license or terms clause that contradicts a claim). A flag, not a verdict."
+        }
+      },
+      "additionalProperties": true
+    }
+  }
+}

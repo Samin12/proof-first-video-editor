@@ -1,0 +1,23 @@
+{
+  "_comment": "Copy to ./pfve-audio.json or ~/.config/proof-first-video-editor/audio.json (or pass --config). Paths may use ~. The Auphonic API key never goes here: set $AUPHONIC_API_KEY or store it in the macOS Keychain (service auphonic-api-key).",
+  "default_project": "demo",
+  "borumi_mcp_dir": "~/.borumi-agent/plugin/scripts",
+  "borumi_builtin_sounds_dir": "/Applications/Borumi.app/Contents/Resources",
+  "edit_skill_dir": "~/.borumi-edit/skill",
+  "auphonic": {
+    "preset": "<your-auphonic-preset-uuid>",
+    "preset_name": "Broadcast Voice"
+  },
+  "loudness": {
+    "target_lufs": -16.0,
+    "true_peak_dbtp": -1.0
+  },
+  "projects": {
+    "demo": {
+      "name": "My Video",
+      "bundle": "~/Borumi Projects/My Video.bmprojbundle",
+      "audio_dir": "~/Borumi Projects/My Video Agent/audio",
+      "project_id": "<optional: id from list_open_projects, e.g. abcd>"
+    }
+  }
+}

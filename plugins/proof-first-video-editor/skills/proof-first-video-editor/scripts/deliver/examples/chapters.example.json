@@ -1,0 +1,21 @@
+{
+  "_about": "Worked example for chapters.py: the card and sub-chapter positions of the REA video master (a 20-minute talking-head + screen-recording tutorial). Times are ms on the master timeline, read from the live project right before export. Card text and chapter text differ on purpose: the card says 'Why This Matters', the description says 'Why It Matters'; level cards never say 'Level N' on screen, the description adds it. Running `chapters.py --config chapters.example.json` prints the block that shipped with that master (0:00 Intro, 1:45 Why It Matters, 3:49 ..., 15:57 Why Open Source Wins).",
+  "intro_title": "Intro",
+  "card_ms": 1601,
+  "card_lead_ms": 1,
+  "duration_ms": 1202536,
+  "cards": [
+    {"start_ms": 104963, "name": "01-why-this-matters", "title": "Why This Matters"},
+    {"start_ms": 386854, "name": "03-rebuilding-my-rabbit", "title": "Rebuilding My Rabbit"},
+    {"start_ms": 516633, "name": "02-what-rea-cant-do", "title": "What REA Can't Do"},
+    {"start_ms": 738341, "name": "04-clone-any-app", "title": "Clone Any App"},
+    {"start_ms": 921896, "name": "05-sell-your-version", "title": "Sell Your Version"},
+    {"start_ms": 956407, "name": "06-why-open-source-wins", "title": "Why Open Source Wins"}
+  ],
+  "chapter_titles": {"Why This Matters": "Why It Matters"},
+  "levels": {"02-what-rea-cant-do": 1, "04-clone-any-app": 2, "05-sell-your-version": 3},
+  "subs": [
+    {"start_ms": 229420, "title": "What Is Reverse Engineering"},
+    {"start_ms": 283980, "title": "How REA Works"}
+  ]
+}

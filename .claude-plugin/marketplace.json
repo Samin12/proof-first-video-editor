@@ -1,0 +1,17 @@
+{
+  "name": "proof-first-video-editor",
+  "owner": {
+    "name": "Samin Yasar",
+    "url": "https://github.com/Samin12"
+  },
+  "metadata": {
+    "description": "Proof-first video editing for Borumi recordings: every claim backed by a real on-screen proof visual."
+  },
+  "plugins": [
+    {
+      "name": "proof-first-video-editor",
+      "source": "./plugins/proof-first-video-editor",
+      "description": "Edit a raw Borumi recording into a proof-first YouTube video, the way the REA video was made: a tight cut, chapter cards, a step badge, a real on-screen proof visual for every claim, Auphonic-mastered audio, captions, chapters, layered QA and an optional tighter v-next cut."
+    }
+  ]
+}

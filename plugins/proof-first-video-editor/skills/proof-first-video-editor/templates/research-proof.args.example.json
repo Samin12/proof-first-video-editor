@@ -1,0 +1,48 @@
+{
+  "_notes": [
+    "Example args for workflows/research-proof.js. Keys starting with _ are ignored by the workflow.",
+    "Everything here is a placeholder for a FICTIONAL video. Replace paths, the narration and the groups with your own.",
+    "One group = one capture agent + one independent verifier. Split groups by topic in narration order (3 to 7 groups is typical);",
+    "each scope lists the exact claims (quoted) and what to capture. The REA pack used four groups: the repo itself, tools and concepts,",
+    "the devices/apps/services named, and the closing claims."
+  ],
+  "today": "2026-01-31",
+  "title": "Tally",
+  "creator": "Alex",
+  "topic": "A tutorial about Tally, a fictional open-source CLI that audits a codebase, and how to rebuild one of its features yourself.",
+  "proof_dir": "/path/to/Tally Agent/proof",
+  "narration_files": ["/path/to/work/words/scene-a.json", "/path/to/work/words/scene-b.json"],
+  "narration": "0:00 This new open-source project called Tally lets you audit any codebase\n0:12 and it's completely free\n3:40 the company behind the original made over 20 billion last year\n7:05 you can resell whatever you build with it",
+  "groups": [
+    {
+      "key": "repo",
+      "folder": "01-the-repo",
+      "scope": "The Tally repo itself (\"This new open-source project called Tally\"; \"you can resell whatever you build with it\").\n- Find the official repo and capture: the header (name, owner, description, stars, forks, license), the README intro, the install steps, the license file and any disclaimer.\n- Record exact counts from the public API next to the screenshot (counts move by the minute).\n- Save a capabilities.json summarising what the README says it can do, with sources, for a 'what it can do' visual."
+    },
+    {
+      "key": "pricing",
+      "folder": "02-pricing",
+      "scope": "\"and it's completely free\": the vendor's pricing page and FAQ. Capture the price, any launch vs regular price, whether a free plan or trial exists (quote the FAQ), and the terms clause on reselling or rebranding if there is one."
+    },
+    {
+      "key": "closing",
+      "folder": "03-closing-claims",
+      "scope": "\"the company behind the original made over 20 billion last year\": the company's official annual report or investor-relations release; give the exact figure, the fiscal year and the currency.\n\"this is my community\": the creator's community, a public post or the feed, never its price, checkout or join page."
+    }
+  ],
+  "honesty_notes": [
+    "A license covers the software it ships with, not things you build by studying another app; quote the disclaimer if there is one.",
+    "Rounded revenue figures are fine as said; show the exact figure and fiscal year on screen."
+  ],
+  "privacy_rules": [
+    "The creator's paid community: never capture its price or join page as a best visual."
+  ],
+  "browsing_notes": "Some vendor sites block headless Chrome: render their official PDF pages instead and say so in method.",
+  "accent": "#E2774E",
+  "fill_gaps": true,
+  "max_gap_claims": 12,
+  "made_graphics": [
+    { "file": "break-even.png", "spec": "A clean break-even table: monthly cost vs payout at 10K, 50K and 100K views per video, from the verified rates only; label growth assumptions as assumptions." }
+  ],
+  "skill_dir": "/path/to/skills/proof-first-video-editor"
+}

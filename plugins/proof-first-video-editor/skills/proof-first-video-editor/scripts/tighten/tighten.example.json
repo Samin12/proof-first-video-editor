@@ -1,0 +1,33 @@
+{
+  "_comment": "Example tighten config. Relative paths resolve against this file's folder. Values mirror the REA video (20:02 master, six sections, six chapter cards); scene ids and paths are placeholders. See references/tighten.md.",
+  "master": "../My Video exports/My Video - final edit v2.mp4",
+  "audio_wav": "../My Video exports/_work/export/My Video - final edit v2 (mastered) (auphonic).mp4.auphonic_work/auphonic.wav",
+  "master_label": "v2",
+  "fps": 60,
+  "sample_rate": 48000,
+  "words_dir": "words",
+  "sections_dir": "sections",
+  "srt": "../My Video exports/My Video - final edit v2.srt",
+  "whisper_model": "~/models/ggml-small.bin",
+  "intro_title": "Intro",
+  "sections": [
+    {"key": "S1", "scene": "SCENE_ID_1", "title": "Intro (hook, who I am, 3-level roadmap)", "range": [0, 104963]},
+    {"key": "S2", "scene": "SCENE_ID_3", "title": "Why It Matters (the beginner concepts, how the tool works)", "range": [106564, 386854]},
+    {"key": "S3", "scene": "SCENE_ID_5", "title": "Live demo (device footage is the main visual)", "range": [388455, 516633]},
+    {"key": "S4", "scene": "SCENE_ID_7", "title": "Level 1: limits and the approach", "range": [518234, 738339]},
+    {"key": "S5", "scene": "SCENE_ID_10", "title": "Level 2: build it, and Level 3: sell it (from the mid-scene card at 921896)", "range": [739942, 956406]},
+    {"key": "S6", "scene": "SCENE_ID_12", "title": "Wrap-up (why it wins, five steps, call to action)", "range": [958007, 1202536]}
+  ],
+  "cards": [
+    {"start_ms": 104963, "end_ms": 106564, "title": "Why This Matters", "chapter": "Why It Matters"},
+    {"start_ms": 386854, "end_ms": 388455, "title": "Live Demo Card", "chapter": "Live Demo"},
+    {"start_ms": 516633, "end_ms": 518234, "title": "Level 1 Card", "chapter": "Level 1: Know the Limits"},
+    {"start_ms": 738339, "end_ms": 739942, "title": "Level 2 Card (2 ms scene remainder + card)", "chapter": "Level 2: Build Your Own", "chapter_at_ms": 738341},
+    {"start_ms": 921896, "end_ms": 923496, "title": "Level 3 Card (mid-scene card)", "chapter": "Level 3: Sell Your Version"},
+    {"start_ms": 956407, "end_ms": 958007, "title": "Wrap-up Card", "chapter": "Why It Wins"}
+  ],
+  "sub_chapters": [
+    {"at_ms": 229420, "title": "What Is Reverse Engineering"},
+    {"at_ms": 283980, "title": "How It Works"}
+  ]
+}

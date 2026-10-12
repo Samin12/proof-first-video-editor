@@ -1,0 +1,54 @@
+# Python / OS
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+.venv/
+venv/
+
+# Media: never commit recordings, renders, captures or stills
+*.mp4
+*.mov
+*.m4a
+*.wav
+*.aac
+*.mp3
+*.f32
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.gif
+
+# Work folders and local state (receipts hold local paths and preset ids)
+*.work/
+*.auphonic_work/
+_work/
+*exports/
+* Agent/
+superseded/
+borumi.lock/
+borumi.lock.owner.json
+node_modules/
+
+# Receipts written next to an output file (production / preset ids, local paths, levels)
+*.auphonic.json
+*.master_mix.json
+*.remix.json
+*.receipt.json
+*.receipts.json
+delivered_v*.json
+delivered_v*.sha256
+fix_srt_v*.json
+verify_v*.json
+*.srt.orig
+
+# Local configs and secrets (examples are committed; real ones stay local)
+.env
+.env.*
+*.env
+pfve-writer.json
+pfve-audio.json
+tighten.json
+words-names.json
+caption-names.json

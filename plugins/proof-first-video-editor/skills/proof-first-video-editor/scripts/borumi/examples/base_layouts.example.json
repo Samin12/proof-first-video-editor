@@ -1,0 +1,5 @@
+[
+  {"scene": "<scene id of a camera-only talk>", "kind": "cam"},
+  {"scene": "<scene id of a screen-recording demo>", "kind": "screen", "layer": "screen_1"},
+  {"range": [836600, 842423], "kind": "cover", "layer": "screen_2"}
+]

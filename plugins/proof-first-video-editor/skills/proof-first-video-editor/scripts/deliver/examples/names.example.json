@@ -1,0 +1,31 @@
+{
+  "_about": "Example name map for fix_srt.py. Copy it next to your project, delete what you do not need, add what your transcript gets wrong. Entries run top to bottom; long phrases before their sub-words. 'from'/'to' = literal whole-word phrases; 'pattern'/'replace' = Python regex per caption line (^ = start of the caption line). 'review' = ambiguous words a human must check; they are reported, never replaced.",
+  "fixes": [
+    {"pattern": "\\bI'm (?:Alec|Alix)\\b", "replace": "I'm Alex", "note": "the creator's own name: put the real spelling and the lookalikes your transcripts produce; scoped to the self-introduction because the lookalike can be a real name elsewhere"},
+    {"to": "Alex Example", "from": ["Alec Example", "Alix Exampel"]},
+
+    {"pattern": "\\b[Cc](?:loud|laud) [Cc]ode\\b", "replace": "Claude Code", "note": "Claude is heard as 'cloud'"},
+    {"pattern": "\\b[Cc]loud [Dd]esktop\\b", "replace": "Claude Desktop"},
+    {"pattern": "^Cloud right now\\b", "replace": "Claude right now", "note": "only at the start of a caption line, where context makes it unambiguous"},
+    {"pattern": "^claw,", "replace": "Claude,"},
+    {"pattern": "\\byour claw\\b", "replace": "your Claude"},
+    {"to": "ChatGPT and Claude", "from": ["ChatGPTKenCloud"], "note": "transcripts glue words together"},
+
+    {"to": "Ghidra", "from": ["Gidra", "Hydra", "Gedra"], "note": "drop 'Hydra' if your video also talks about the real Hydra"},
+    {"to": "ChatGPT", "from": ["chat GPT", "Chat GPT"]},
+    {"to": "Codex", "from": ["codecs", "Codecs"], "note": "only if your video never says 'codecs' for real"},
+    {"to": "Firecrawl", "from": ["Fire crawl", "Fire Crawl", "FireCrawl"]},
+    {"to": "Higgsfield", "from": ["Hicks field", "Hicksfield", "Higgs field"]},
+    {"to": "Seedance", "from": ["C dance", "Cdance"]},
+    {"to": "Blotato", "from": ["Blow Tato", "blowtato"]},
+    {"to": "README", "from": ["read me file"], "ignore_case": true},
+
+    {"pattern": "\\b(recreate) [Rr]ecreate\\b", "replace": "\\1", "note": "stutter: a doubled word"},
+    {"pattern": "\\bit's project page\\b", "replace": "its project page", "note": "grammar slips are fair game too, but only unambiguous ones"}
+  ],
+  "review": [
+    "\\b[Cc]loud\\b",
+    "\\b[Cc]law\\b",
+    "\\b(?:Alec|Alix)\\b"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "_comment": "place_render.py input. FRONT = renders WITH ALPHA (ProRes 4444 .mov) drawn over real footage that already sits in the left panel; the camera tile and the badge stay above the render.",
+  "mode": "front",
+  "slots": [
+    {"name": "P1", "render": "~/Borumi Projects/My Video Agent/animations/anim-zzzz/anim-zzzz-v1.mov", "start": 923496, "end": 956406}
+  ]
+}

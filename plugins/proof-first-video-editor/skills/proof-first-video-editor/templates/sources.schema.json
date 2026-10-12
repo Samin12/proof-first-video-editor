@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Samin12/proof-first-video-editor/templates/sources.schema.json",
+  "title": "Per-folder proof sources (<folder>/sources.json)",
+  "description": "Written by each capture agent of workflows/research-proof.js and amended by its independent verifier. A JSON ARRAY with one record per claim in that folder's scope. Rewrite the file after every item (agents that die before the end must not lose their work). Files are relative to the folder.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "claim", "verified_value", "matches", "source_url", "captured_at", "method", "files"],
+    "properties": {
+      "id": { "type": "string", "description": "Stable, unique across the pack.", "examples": ["repo-01-identity", "pricing-02-launch-price"] },
+      "section": { "type": "string", "description": "Optional: the video section or chapter the claim belongs to." },
+      "claim": { "type": "string", "description": "The creator's exact wording (short quote)." },
+      "verified_value": { "type": "string", "description": "What the source shows now: exact figures, quoted text, the date of the page, and for live counters the time of the reading." },
+      "matches": { "type": "string", "enum": ["yes", "no", "partial", "unverified"] },
+      "suggested_line": { "type": ["string", "null"], "description": "For no/partial: an honest line in the creator's voice. For yes: optional safer on-screen wording (e.g. \"100K+\" for a moving counter)." },
+      "source_url": { "type": "string" },
+      "captured_at": { "type": "string", "description": "ISO 8601 with time and zone." },
+      "method": {
+        "type": "string",
+        "description": "How it was captured, precisely enough to repeat it.",
+        "examples": ["Isolated headless Chrome (fresh temp profile, CDP, 1920x1200 @2x, logged out) screenshot of the live page; crop + highlight with ffmpeg crop/drawbox (#E2774E, 6 px); exact counts from the public API"]
+      },
+      "files": {
+        "type": "array",
+        "items": { "type": "string" },
+        "description": "NN-<what>-full.png, NN-<what>-crop.png, NN-<what>-highlight.png, plus raw evidence (page markdown, API JSON) under raw/."
+      },
+      "best_visual": { "type": "string", "description": "The one file that should go on screen for this claim." },
+      "notes": { "type": "string" },
+      "do_not_show": { "type": "array", "items": { "type": "string" }, "description": "Visible things that must never reach the screen (third-party names, the creator's paid-community price, emails)." }
+    },
+    "additionalProperties": true
+  }
+}
